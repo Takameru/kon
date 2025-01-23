@@ -1,0 +1,430 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    overflow-x: hidden;
+}
+
+.navbar {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    font-weight: bolder;
+    z-index: 2;
+}
+
+.navbar .logo img {
+    height: 40px;
+    width: auto;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3vw;
+    margin-right: 5vw;
+    
+}
+
+.navbar .nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.navbar .nav-links li a:hover {
+    color: #f4a261;
+}
+
+/* Fullscreen Section */
+.fullscreen {
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000086;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fullscreen video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        z-index: -1; 
+        }
+
+.fullscreen .content h1 {
+    font-size: 4rem;
+    color: white;
+}
+.content p {
+    color: white;
+    margin-top: 15px;
+}
+.body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      background-color: #eaeaea;
+    }
+
+    .map {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    svg {
+      padding-top: 15vh; ;
+      width: 90%;
+      max-width: 800px;
+      height: auto;
+    }
+
+    path {
+      fill: #dcdcdc;
+      stroke: #666666;
+      stroke-width: 2;
+      cursor: pointer;
+      transition: fill 0.3s ease;
+    }
+
+    path:hover {
+      fill: #4CAF50;
+    }
+
+    path:active {
+      fill: #45a049;
+    }
+
+    text {
+      font-size: 12px;
+      font-family: Arial, sans-serif;
+      pointer-events: none;
+    }
+    .goals-section {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4; 
+            padding: 20px;
+            text-align: center;
+        }
+
+        .goals-section h1 {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .goal {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            font-size: 1.2rem;
+            color: #333;
+            justify-content: flex-start; 
+        }
+
+        .goal i {
+            font-size: 2rem;
+            color: #4CAF50; 
+            margin-right: 15px; 
+        }
+
+        .goal p {
+            max-width: 800px;
+            margin: 0;
+            color: #555;
+            line-height: 1.6;
+            text-align: right;
+        }
+
+
+        .full-section1 {
+            width: 100vw;
+            height: 101vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f4f4f4;
+            position: relative;
+        }
+
+        .content1 {
+            max-width: 800px;
+            text-align: center;
+            padding: 20px;
+            color: #333;
+        }
+
+        .content1 h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #2d3748;
+        }
+
+        .content1 p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .placeholder1 {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 25vw;
+            min-width: 150px;
+            height: 100vh;
+        }
+
+        .placeholder1.left1 {
+            background-image: url(https://34travel.me/media/upload/images/2021/DECEMBER/go-to-belarus-2021/296A2295.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .placeholder1.right1 {
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/c/c0/%D0%9F%D1%80%D0%BE%D1%81%D1%82%D0%BE%D1%80%D1%8B_%D0%91%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D0%B8.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .left2 {
+            background-image: url(https://cdn.tripster.ru/thumbs2/4bc25de2-4875-11ed-a4ef-de8cbc8e9d96.1080x810.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+
+        }
+        .right2 {
+            background-image: url(https://bestbelarus.by/upload/resize_cache/webp/iblock/b7f/b7ffcee02d04855f4703e4888fb2a54d.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+
+
+        }
+        
+        .game-container {
+            background-image: url(https://img.freepik.com/premium-vector/belarus-ornament-seamless-pattern-background_408115-1555.jpg);
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #DCE1ED;
+            flex-direction: column;
+            position: relative;
+            padding-top: 6vh;
+        }
+
+        .game-board {
+            display: grid;
+            grid-template-columns: repeat(5, 150px);
+            grid-template-rows: repeat(4, 150px);
+            gap: 10px;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .card {
+            width: 130px;
+            height: 130px;
+            border-radius: 15px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            transform-style: preserve-3d;
+            position: relative;
+            color: white;
+        }
+
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            position: absolute;
+            transition: transform 0.3s;
+        }
+
+        .card-front,
+        .card-back {
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 15px; 
+        }
+
+        .card-front {
+            background-color: #ffffff;
+            border: 5px solid #be0f15;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: #1D3301;
+        }
+
+        .card-back {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotateY(180deg);
+        }
+
+        .card-back img {
+            width: 115px;
+            height: 115px;
+            border-radius: 10px;
+        }
+
+        .win-message {
+            font-size: 2rem;
+            color: #3a0000;
+            text-align: center;
+            display: none;
+            background-color: white;
+        }
+
+        .restart-button {
+            padding: 10px 20px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .restart-button:hover {
+            background-color: #2e2e2e;
+        }
+        .game-info {
+            background-color: #be0f15;
+            padding:20px;
+            border-radius: 15px;
+            font-weight: bold;
+            color: #fefefe;
+            border: 5px #fefefe solid;
+            font-size: 1.5rem;
+        }
+
+        @media (max-height: 767px) {
+        
+            .navbar a {
+                padding: 10px;
+            }
+            .navbar {
+                padding: 15px;
+            }
+
+            .fullscreen .content h1 {
+                font-size: 2rem;
+                color: white;
+            }
+
+            .goals-section h1 {
+                font-size: 2rem;
+                color: #333;
+                margin-bottom: 20px;
+            }
+    
+            .goal {
+                margin: 6px 0;
+                font-size: 1rem;
+            }
+
+            .content1 h1 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+    
+            .content1 p {
+                font-size: 0.95rem;
+                line-height: 1.8;
+            }
+            .body {
+                height: 200vh;
+              }
+
+        
+            .map {
+                width: 100%; 
+                height: auto; 
+                margin-left: 8vw;
+
+            }
+            .card {
+                width: 100px;
+                height: 100px;
+            }
+            .card-back img {
+                width: 85px;
+                height: 85px;
+            }
+            .game-board {
+                grid-template-columns: repeat(5, 120px);
+                grid-template-rows: repeat(4, 110px);
+                gap: 10px;
+            }
+            .game-container {
+                height: 150vh;
+            }
+
+
+        }
+
+        .rotate {
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.76);
+            z-index: 3;
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+            
+        }
+
+        @media screen and (orientation: portrait) {
+            .rotate {
+                visibility: visible;
+            }
+
+            
+        }
+        
