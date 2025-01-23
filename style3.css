@@ -607,6 +607,10 @@ label {
         position: absolute;
 
     }
+    .section-two h2,.section-one h2,.section-three h2 {
+        font-size: 0.8rem;
+
+    }
     
 
 

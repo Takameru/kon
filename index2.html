@@ -218,8 +218,6 @@
             </div>
           </section>
         
-          <audio id="hover-audio" src="your-audio-file.mp3" preload="auto"></audio>
-        
         <section id="drawing-section">
             <h1 style="margin-bottom: 20px;">Нарисуй открытку о Гомеле!</h1>
             <div class="tools-container">
@@ -243,21 +241,10 @@
             <div id="gallery"></div>
           </section>
 
-          <footer style="background-color: #313131; color: #e1e1e1; text-align: center; padding: 30px;">
-            <p>© 2024 Все права защищены | Гомельская история</p>
+          <footer style="background-color: #313131; color: #e1e1e1; text-align: center; padding:  8vh;">
+            <p>© 2025 Все права защищены | Гомельская история</p>
           </footer>
           <script>
-            const section = document.getElementById('interactive-section');
-            const audio = document.getElementById('hover-audio');
-
-            section.addEventListener('mouseenter', () => {
-            audio.play();
-            });
-
-            section.addEventListener('mouseleave', () => {
-            audio.pause();
-            audio.currentTime = 0;
-            });
             const canvas = document.getElementById("drawing-canvas");
             const ctx = canvas.getContext("2d");
             const colorPicker = document.getElementById("color-picker");
@@ -267,126 +254,180 @@
             const clearBtn = document.getElementById("clear-canvas");
             const sendBtn = document.getElementById("send-btn");
             const gallery = document.getElementById("gallery");
-        
+
             let drawing = false;
             let tool = "brush";
             let color = "#000";
             let thickness = 2;
             let startX, startY;
-        
+
             const history = [];
             let redoStack = [];
-        
+
             colorPicker.addEventListener("input", (e) => (color = e.target.value));
             thicknessSlider.addEventListener("input", (e) => (thickness = e.target.value));
-        
+
             document.getElementById("brush-tool").addEventListener("click", () => (tool = "brush"));
             document.getElementById("line-tool").addEventListener("click", () => (tool = "line"));
             document.getElementById("rectangle-tool").addEventListener("click", () => (tool = "rectangle"));
             document.getElementById("circle-tool").addEventListener("click", () => (tool = "circle"));
-        
+
             undoTool.addEventListener("click", () => {
-              if (history.length > 0) {
+            if (history.length > 0) {
                 redoStack.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
                 const imageData = history.pop();
                 ctx.putImageData(imageData, 0, 0);
-              }
+            }
             });
-        
+
             redoTool.addEventListener("click", () => {
-              if (redoStack.length > 0) {
+            if (redoStack.length > 0) {
                 history.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
                 const imageData = redoStack.pop();
                 ctx.putImageData(imageData, 0, 0);
-              }
+            }
             });
-        
+
             canvas.addEventListener("mousedown", (e) => {
-              drawing = true;
-              startX = e.offsetX;
-              startY = e.offsetY;
-        
-              history.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
-              redoStack = [];
+            drawing = true;
+            startX = e.offsetX;
+            startY = e.offsetY;
+
+            history.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+            redoStack = [];
             });
-        
+
             canvas.addEventListener("mouseup", (e) => {
-              drawing = false;
-              const endX = e.offsetX;
-              const endY = e.offsetY;
-        
-              if (tool === "line") drawLine(startX, startY, endX, endY);
-              if (tool === "rectangle") drawRectangle(startX, startY, endX, endY);
-              if (tool === "circle") drawCircle(startX, startY, endX, endY);
-        
-              ctx.beginPath();
+            drawing = false;
+            const endX = e.offsetX;
+            const endY = e.offsetY;
+
+            if (tool === "line") drawLine(startX, startY, endX, endY);
+            if (tool === "rectangle") drawRectangle(startX, startY, endX, endY);
+            if (tool === "circle") drawCircle(startX, startY, endX, endY);
+
+            ctx.beginPath();
             });
-        
+
             canvas.addEventListener("mousemove", (e) => {
-              if (!drawing || tool !== "brush") return;
-        
-              ctx.lineWidth = thickness;
-              ctx.lineCap = "round";
-              ctx.strokeStyle = color;
-        
-              ctx.lineTo(e.offsetX, e.offsetY);
-              ctx.stroke();
-              ctx.beginPath();
-              ctx.moveTo(e.offsetX, e.offsetY);
+            if (!drawing || tool !== "brush") return;
+
+            ctx.lineWidth = thickness;
+            ctx.lineCap = "round";
+            ctx.strokeStyle = color;
+
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(e.offsetX, e.offsetY);
             });
-        
+
+            canvas.addEventListener("touchstart", (e) => {
+            const touch = e.touches[0];
+            const rect = canvas.getBoundingClientRect();
+            startX = touch.clientX - rect.left;
+            startY = touch.clientY - rect.top;
+
+            drawing = true;
+            history.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+            redoStack = [];
+
+            if (tool === "brush") {
+                ctx.beginPath();
+                ctx.moveTo(startX, startY);
+            }
+            e.preventDefault();
+            });
+
+            canvas.addEventListener("touchmove", (e) => {
+            if (!drawing) return;
+
+            const touch = e.touches[0];
+            const rect = canvas.getBoundingClientRect();
+            const x = touch.clientX - rect.left;
+            const y = touch.clientY - rect.top;
+
+            if (tool === "brush") {
+                ctx.lineWidth = thickness;
+                ctx.lineCap = "round";
+                ctx.strokeStyle = color;
+
+                ctx.lineTo(x, y);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+            }
+            e.preventDefault();
+            });
+
+            canvas.addEventListener("touchend", (e) => {
+            drawing = false;
+            if (tool !== "brush") {
+                const rect = canvas.getBoundingClientRect();
+                const touch = e.changedTouches[0];
+                const endX = touch.clientX - rect.left;
+                const endY = touch.clientY - rect.top;
+
+                if (tool === "line") drawLine(startX, startY, endX, endY);
+                if (tool === "rectangle") drawRectangle(startX, startY, endX, endY);
+                if (tool === "circle") drawCircle(startX, startY, endX, endY);
+            }
+            ctx.beginPath();
+            e.preventDefault();
+            });
+
             clearBtn.addEventListener("click", () => {
-              ctx.clearRect(0, 0, canvas.width, canvas.height);
-              history.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            history.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
             });
-        
+
             sendBtn.addEventListener("click", () => {
-              const nickname = prompt("Введи свое ФИО:");
-              if (!nickname) return;
-        
-              const image = canvas.toDataURL();
-              const galleryItem = document.createElement("div");
-              galleryItem.classList.add("gallery-item");
-        
-              const img = document.createElement("img");
-              img.src = image;
-              img.alt = "Postcard";
-        
-              const label = document.createElement("p");
-              label.textContent = nickname;
-        
-              galleryItem.appendChild(img);
-              galleryItem.appendChild(label);
-              gallery.appendChild(galleryItem);
-        
-              ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const nickname = prompt("Enter your name:");
+            if (!nickname) return;
+
+            const image = canvas.toDataURL();
+            const galleryItem = document.createElement("div");
+            galleryItem.classList.add("gallery-item");
+
+            const img = document.createElement("img");
+            img.src = image;
+            img.alt = "Drawing";
+
+            const label = document.createElement("p");
+            label.textContent = nickname;
+
+            galleryItem.appendChild(img);
+            galleryItem.appendChild(label);
+            gallery.appendChild(galleryItem);
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
             });
-        
+
             function drawLine(x1, y1, x2, y2) {
-              ctx.lineWidth = thickness;
-              ctx.strokeStyle = color;
-              ctx.beginPath();
-              ctx.moveTo(x1, y1);
-              ctx.lineTo(x2, y2);
-              ctx.stroke();
+            ctx.lineWidth = thickness;
+            ctx.strokeStyle = color;
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();
             }
-        
+
             function drawRectangle(x1, y1, x2, y2) {
-              ctx.lineWidth = thickness;
-              ctx.strokeStyle = color;
-              ctx.strokeRect(x1, y1, x2 - x1, y2 - y1);
+            ctx.lineWidth = thickness;
+            ctx.strokeStyle = color;
+            ctx.strokeRect(x1, y1, x2 - x1, y2 - y1);
             }
-        
+
             function drawCircle(x1, y1, x2, y2) {
-              const radius = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
-              ctx.lineWidth = thickness;
-              ctx.strokeStyle = color;
-              ctx.beginPath();
-              ctx.arc(x1, y1, radius, 0, Math.PI * 2);
-              ctx.stroke();
+            const radius = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+            ctx.lineWidth = thickness;
+            ctx.strokeStyle = color;
+            ctx.beginPath();
+            ctx.arc(x1, y1, radius, 0, Math.PI * 2);
+            ctx.stroke();
             }
 
-
+            
 
             const presentations = [
             "https://docs.google.com/presentation/d/e/2PACX-1vS6sYKjXAM2MINoZ-MdLJ5DptO9CFFQQH9f9aByIMs9AF8-NDM1Et0RGUP10cqMAEuC8SlGJ55x-2e2/embed?start=true&loop=true&delayms=3000",

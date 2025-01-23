@@ -399,18 +399,12 @@ body {
                 gap: 10px;
             }
             .game-container {
-                height: 150vh;
-            }
-            #interactiv {
-                height: 150vh;
+                height: 200vh;
             }
             .navbar {
                 position: absolute;
 
             }
-            
-
-            
 
 
         }
