@@ -1,0 +1,630 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+section {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.diva {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    transition: transform 0.3s ease; 
+    background-image: url(https://gomelschool11.by/wp-content/uploads/2018/02/obrazovanie.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+.diva:hover {
+    transform: scale(1.2); 
+}
+
+
+@keyframes moveAround1_1 {
+    0% { top: 10%; left: 10%; }
+    50% { top: 80%; left: 60%; }
+    100% { top: 10%; left: 10%; }
+}
+
+@keyframes moveAround1_2 {
+    0% { top: 20%; left: 20%; }
+    50% { top: 70%; left: 80%; }
+    100% { top: 20%; left: 20%; }
+}
+
+@keyframes moveAround1_3 {
+    0% { top: 30%; left: 30%; }
+    50% { top: 80%; left: 20%; }
+    100% { top: 30%; left: 30%; }
+}
+
+@keyframes moveAround1_4 {
+    0% { top: 40%; left: 40%; }
+    50% { top: 70%; left: 60%; }
+    100% { top: 40%; left: 40%; }
+}
+
+@keyframes moveAround1_5 {
+    0% { top: 50%; left: 50%; }
+    50% { top: 80%; left: 90%; }
+    100% { top: 50%; left: 50%; }
+}
+
+@keyframes moveAround1_6 {
+    0% { top: 60%; left: 60%; }
+    50% { top: 10%; left: 70%; }
+    100% { top: 60%; left: 60%; }
+}
+
+
+@keyframes bounce2_1 {
+    0% { top: 10%; left: 20%; }
+    25% { top: 40%; left: 20%; }
+    50% { top: 70%; left: 20%; }
+    75% { top: 40%; left: 20%; }
+    100% { top: 10%; left: 20%; }
+}
+
+@keyframes bounce2_2 {
+    0% { top: 10%; left: 40%; }
+    25% { top: 50%; left: 40%; }
+    50% { top: 80%; left: 40%; }
+    75% { top: 50%; left: 40%; }
+    100% { top: 10%; left: 40%; }
+}
+
+@keyframes bounce2_3 {
+    0% { top: 10%; left: 60%; }
+    25% { top: 60%; left: 60%; }
+    50% { top: 90%; left: 60%; }
+    75% { top: 60%; left: 60%; }
+    100% { top: 10%; left: 60%; }
+}
+
+@keyframes bounce2_4 {
+    0% { top: 20%; left: 80%; }
+    25% { top: 50%; left: 80%; }
+    50% { top: 80%; left: 80%; }
+    75% { top: 50%; left: 80%; }
+    100% { top: 20%; left: 80%; }
+}
+
+@keyframes bounce2_5 {
+    0% { top: 20%; left: 20%; }
+    25% { top: 60%; left: 20%; }
+    50% { top: 90%; left: 20%; }
+    75% { top: 60%; left: 20%; }
+    100% { top: 20%; left: 20%; }
+}
+
+@keyframes bounce2_6 {
+    0% { top: 40%; left: 40%; }
+    25% { top: 70%; left: 40%; }
+    50% { top: 90%; left: 40%; }
+    75% { top: 70%; left: 40%; }
+    100% { top: 40%; left: 40%; }
+}
+
+@keyframes rotateScale3_1 {
+    0% { top: 20%; left: 20%; transform: rotate(0deg) scale(1); }
+    25% { top: 20%; left: 60%; transform: rotate(90deg) scale(1.2); }
+    50% { top: 50%; left: 60%; transform: rotate(180deg) scale(1.5); }
+    75% { top: 50%; left: 20%; transform: rotate(270deg) scale(1.2); }
+    100% { top: 20%; left: 20%; transform: rotate(360deg) scale(1); }
+}
+
+@keyframes rotateScale3_2 {
+    0% { top: 30%; left: 40%; transform: rotate(0deg) scale(1); }
+    25% { top: 50%; left: 80%; transform: rotate(90deg) scale(1.2); }
+    50% { top: 80%; left: 80%; transform: rotate(180deg) scale(1.5); }
+    75% { top: 80%; left: 40%; transform: rotate(270deg) scale(1.2); }
+    100% { top: 30%; left: 40%; transform: rotate(360deg) scale(1); }
+}
+
+@keyframes rotateScale3_3 {
+    0% { top: 20%; left: 70%; transform: rotate(0deg) scale(1); }
+    25% { top: 60%; left: 90%; transform: rotate(90deg) scale(1.2); }
+    50% { top: 80%; left: 40%; transform: rotate(180deg) scale(1.5); }
+    75% { top: 50%; left: 20%; transform: rotate(270deg) scale(1.2); }
+    100% { top: 20%; left: 70%; transform: rotate(360deg) scale(1); }
+}
+
+@keyframes rotateScale3_4 {
+    0% { top: 50%; left: 30%; transform: rotate(0deg) scale(1); }
+    25% { top: 60%; left: 60%; transform: rotate(90deg) scale(1.2); }
+    50% { top: 80%; left: 90%; transform: rotate(180deg) scale(1.5); }
+    75% { top: 60%; left: 80%; transform: rotate(270deg) scale(1.2); }
+    100% { top: 50%; left: 30%; transform: rotate(360deg) scale(1); }
+}
+
+@keyframes rotateScale3_5 {
+    0% { top: 10%; left: 50%; transform: rotate(0deg) scale(1); }
+    25% { top: 40%; left: 70%; transform: rotate(90deg) scale(1.2); }
+    50% { top: 60%; left: 90%; transform: rotate(180deg) scale(1.5); }
+    75% { top: 50%; left: 70%; transform: rotate(270deg) scale(1.2); }
+    100% { top: 10%; left: 50%; transform: rotate(360deg) scale(1); }
+}
+
+@keyframes rotateScale3_6 {
+    0% { top: 30%; left: 30%; transform: rotate(0deg) scale(1); }
+    25% { top: 60%; left: 40%; transform: rotate(90deg) scale(1.2); }
+    50% { top: 70%; left: 80%; transform: rotate(180deg) scale(1.5); }
+    75% { top: 40%; left: 90%; transform: rotate(270deg) scale(1.2); }
+    100% { top: 30%; left: 30%; transform: rotate(360deg) scale(1); }
+}
+
+
+.section-one .diva:nth-child(1) { animation: moveAround1_1 10s infinite ease-in-out; }
+.section-one .diva:nth-child(2) { animation: moveAround1_2 12s infinite ease-in-out; }
+.section-one .diva:nth-child(3) { animation: moveAround1_3 14s infinite ease-in-out; }
+.section-one .diva:nth-child(4) { animation: moveAround1_4 16s infinite ease-in-out; }
+.section-one .diva:nth-child(5) { animation: moveAround1_5 18s infinite ease-in-out; }
+.section-one .diva:nth-child(6) { animation: moveAround1_6 20s infinite ease-in-out; }
+
+.section-two .diva:nth-child(1) { animation: bounce2_1 10s infinite ease-in-out; }
+.section-two .diva:nth-child(2) { animation: bounce2_2 12s infinite ease-in-out; }
+.section-two .diva:nth-child(3) { animation: bounce2_3 14s infinite ease-in-out; }
+.section-two .diva:nth-child(4) { animation: bounce2_4 16s infinite ease-in-out; }
+.section-two .diva:nth-child(5) { animation: bounce2_5 18s infinite ease-in-out; }
+.section-two .diva:nth-child(6) { animation: bounce2_6 20s infinite ease-in-out; }
+
+
+.section-three .diva:nth-child(1) { animation: rotateScale3_1 16s infinite ease-in-out; }
+.section-three .diva:nth-child(2) { animation: rotateScale3_2 18s infinite ease-in-out; }
+.section-three .diva:nth-child(3) { animation: rotateScale3_3 20s infinite ease-in-out; }
+.section-three .diva:nth-child(4) { animation: rotateScale3_4 24s infinite ease-in-out; }
+.section-three .diva:nth-child(5) { animation: rotateScale3_5 26s infinite ease-in-out; }
+.section-three .diva:nth-child(6) { animation: rotateScale3_6 30s infinite ease-in-out; }
+
+.btn-left,.btn-right {
+    width: 75%;
+    padding: 3vh;
+    background-color: rgb(207, 207, 207);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+}
+.section-two button {
+    background-color: #44bb4e;
+    color: white;
+}
+.section-three button {
+    background-color: #44bb4e;
+    color: white;
+}
+
+button:hover {
+    background-color: #b3ffa3;
+}
+
+.btn-left {
+    bottom: 30px;
+    left: 30px;
+}
+
+.btn-right {
+    bottom: 30px;
+    right: 30px;
+}
+
+.button-container {
+    position: absolute;
+    width: 25%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    left: 3%;
+}
+.button-container.chet  {
+    left: 72%;
+    background-color: #25972f;
+    color: white;
+}
+
+
+.button-container h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.button-container p {
+    font-size: 14px;
+}
+.section-two .diva{
+    background-color: #4dc957;
+}
+.section-three .diva {
+    background-color: #4dc957;
+
+}
+
+
+.section-one {
+    background-color: rgb(77, 192, 0); /* Dark gray background */
+    background-image: url(https://st2.depositphotos.com/3827765/5416/v/450/depositphotos_54165029-stock-illustration-seamless-pattern-with-school-things.jpg);
+}
+
+.section-two {
+    background-color: #4e91d4; /* Soft blue background */
+    background-image: url(https://img.freepik.com/premium-vector/creativity-seamless-pattern_118813-11846.jpg);
+}
+
+.section-three {
+    background-color: #f0a; /* Light pink background */
+    background-image: url(https://img.freepik.com/premium-vector/seamless-pattern-elements-hand-drawn-collection-college-school-study-vector-design-style-background_324137-2144.jpg);
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.navbar {
+position: fixed;
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 100vw;
+padding: 20px;
+background-color: #168500;
+color: white;
+font-weight: bolder;
+z-index: 2;
+}
+
+.navbar .logo img {
+height: 40px;
+width: auto;
+}
+
+.navbar .nav-links {
+list-style: none;
+display: flex;
+gap: 50px;
+margin-right: 5vw;
+
+}
+
+.navbar .nav-links li a {
+text-decoration: none;
+color: white;
+font-size: 18px;
+}
+
+.navbar .nav-links li a:hover {
+color: #f4a261;
+}
+
+
+.fullscreen {
+width: 100vw;
+height: 100vh;
+background-color: #00000086;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.fullscreen .content h1 {
+font-size: 4rem;
+color: white;
+}
+.backfull {
+background-image: url(https://i.ytimg.com/vi/GMv6du0Q-BQ/maxresdefault.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+z-index: -1;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+
+}
+.content p {
+color: white;
+margin-top: 15px;
+}
+
+
+.ask {
+    font-family: sans-serif;
+    color: white;
+    background-color: #004d00; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150vh;
+    width: 100vw;
+}
+.quiz-container {
+    width: 90vw;
+    height: 145vh;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #006600; 
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.header {
+    grid-column: span 2;
+    text-align: center;
+    color: #ccffcc; 
+    font-size: 24px;
+    font-weight: bold;
+}
+h1 {
+    text-align: center;
+    color: #99ff99; 
+    grid-column: span 2;
+}
+.question {
+    padding: 3vh;
+    background-color: #007a00; 
+    border-radius: 5px;
+    height: calc(100vh/ 5); 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.question p {
+    font-weight: bold;
+}
+label {
+    display: block;
+    margin: 5px 0;
+}
+.check-button1 {
+    grid-column: span 2;
+    justify-self: end;
+    align-self: end;
+    background-color: #66ff66;
+    color: #004d00;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.check-button1:hover {
+    background-color: #33cc33; 
+    transform: scale(1.05);
+}
+.result {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #99ff99;
+    grid-column: span 2;
+}
+
+
+.full-section1 {
+    width: 100vw;
+    height: 101vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f4f4;
+    position: relative;
+}
+
+
+.content1 {
+    max-width: 800px;
+    text-align: center;
+    z-index: 1;
+    padding: 20px;
+    color: #333;
+}
+
+.content1 h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #2d3748;
+}
+
+.content1 p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.placeholder1 {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 25vw;
+    min-width: 150px;
+    height: 100vh;
+}
+
+.placeholder1.left1 {
+    background-image: url(http://gomelschool11.by/wp-content/uploads/2018/03/IMG_3923_1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.placeholder1.right1 {
+    background-image: url(http://gomelschool11.by/wp-content/uploads/2018/03/2-8_1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+.d1 {
+    background-image: url(https://gomelschool11.by/wp-content/uploads/2018/02/obrazovanie.png);
+}
+.d2 {
+    background-image: url(https://gomelschool11.by/wp-content/uploads/2018/02/2.png);
+}
+.d3 {
+    background-image: url(https://gomelschool11.by/wp-content/uploads/2018/02/roditelyam-1.png);
+}
+.d4 {
+    background-image: url(https://gomelschool11.by/wp-content/uploads/2018/02/PEDEGOGAM.png);
+}
+.d5 {
+    background-image: url(https://gomelschool11.by/wp-content/uploads/2018/02/6DEN.png);
+}
+.d6 {
+    background-image: url(https://gomelschool11.by/wp-content/uploads/2018/02/vospitatelnaya.png);
+}
+.d7 {
+    background-image: url(images/Сделай\ свой\ выбор.jpg);
+}
+.d8 {
+    background-image: url(images/IMG_20240808_100424.png);
+}
+.d9 {
+    background-image: url(images/photo_2025-01-14_12-57-01.jpg);
+}
+.d10 {
+    background-image: url(images/photo_2025-01-14_12-58-07.jpg);
+}
+.d11 {
+    background-image: url(images/photo_2025-01-14_12-57-58.jpg);
+}
+.d12 {
+    background-image: url(https://gomelschool11.by/wp-content/uploads/2025/01/photo_2025-01-13_16-13-40-1280x914.jpg);
+}
+.d13 {
+    background-image: url(images/1.jpg);
+}
+.d14 {
+    background-image: url(images/2.jpg);
+}
+.d15 {
+    background-image: url(images/3.jpg);
+}
+.d16 {
+    background-image: url(images/4.jpg);
+}
+.d17 {
+    background-image: url(images/5.jpg);
+}
+.d18 {
+    background-image: url(images/6.jpg);
+}
+
+@media (max-height: 767px) {
+        
+    .navbar a {
+        padding: 10px;
+    }
+    .navbar {
+        padding: 15px;
+    }
+
+    .fullscreen .content h1 {
+        font-size: 2rem;
+        color: white;
+    }
+
+    .goals-section h1 {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .goal {
+        margin: 6px 0;
+        font-size: 1rem;
+    }
+
+    .content1 h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .content1 p {
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
+    .section-two p,.section-one p,.section-three p {
+        font-size: 0.6rem;
+
+    }
+    #drawing-section {
+        height:  450vh;
+
+    }
+    .header {
+        font-size: 1rem;
+    }
+    .quiz-container h1 {
+        font-size: 1rem;
+    }  
+    .question {
+        height: 50vh;
+        font-size: 0.8rem;
+
+    }
+    .quiz-container {
+        width: 90vw;
+        height: 420vh;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: #006600; 
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+
+
+}
+
+.rotate {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.76);
+    z-index: 3;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    
+}
+
+@media screen and (orientation: portrait) {
+    .rotate {
+        visibility: visible;
+    }
+
+    
+}
